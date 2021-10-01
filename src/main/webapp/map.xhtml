@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Map</title>
+        <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false" />
+    </h:head>
+    <h:body>
+        <div class="card">
+            <h:form id="formMap">
+                <p:gmap id="map" center="#{cyclistMapBean.cyclist.latitude}, #{cyclistMapBean.cyclist.longitude}" zoom="16" type="ROADMAP" model="#{cyclistMapBean.simpleModel}" style="width:100%;height:800px" mapTypeControl="true" navigationControl="true"></p:gmap>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+

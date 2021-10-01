@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+
+        <p:growl life="4000"/>
+
+
+        <h:form>
+            <h:inputHidden value="#{cyclistManagedBean.cyclist.id}" id="idCylist">
+                   <f:converter converterId = "com.stema.converter.IdMongoDBConverter" />
+            </h:inputHidden>
+            
+            <p:panelGrid columns="2">
+                
+                <f:facet name="header">Cyclist</f:facet>
+                LastName : <p:inputText value="#{cyclistManagedBean.cyclist.lastName}" required="true" label="LastName"/>
+                FirstName : <p:inputText value="#{cyclistManagedBean.cyclist.firstName}" required="true" label="FirstName"/>
+                Latitude : <p:inputText value="#{cyclistManagedBean.cyclist.latitude}" required="true" label="Latitude"/>
+                Longitude : <p:inputText value="#{cyclistManagedBean.cyclist.longitude}" required="true" label="Longitude"/>
+                Action : <p:commandButton action="#{cyclistManagedBean.edit()}" value="Edit" ajax="false"/>
+                <f:facet name="footer">Copyright...</f:facet>
+
+            </p:panelGrid> 
+        </h:form>
+        
+        
+    </h:body>
+</html>
+
